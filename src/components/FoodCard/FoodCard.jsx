@@ -1,12 +1,15 @@
 import React from "react";
-import testfoodphoto from "../../assets/images/vegan1.jpeg";
 
 export default function FoodCard({ food }) {
-  const { name, category } = food;
+  const { name, category, imageUrl } = food;
   return (
-    <div className="rounded-md w-[fit-content] overflow-hidden">
-      <img className="w-[268px] block" src={testfoodphoto} alt={name} />
-      <p className="text-center bg-primary-light py-4">
+    <div className="rounded-lg w-[fit-content] overflow-hidden mx-auto shadow-sm">
+      <img
+        className="w-[320px] block"
+        src={process.env.PUBLIC_URL + `${imageUrl}`}
+        alt={name}
+      />
+      <p className="text-center bg-primary-light py-4 text-xl">
         {name} ({category})
       </p>
     </div>

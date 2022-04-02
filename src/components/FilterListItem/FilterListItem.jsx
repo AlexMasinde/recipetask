@@ -1,7 +1,7 @@
 import React from "react";
 import { useFilters } from "../../contexts/filterContext";
 
-export default function FoodListItem({ category }) {
+export default function FoodListItem({ category, setShowList }) {
   const { name } = category;
   const { filters, setFilters } = useFilters();
   const filtered = filters.includes(name);
@@ -12,14 +12,15 @@ export default function FoodListItem({ category }) {
     } else {
       setFilters([...filters, name]);
     }
+    setShowList(false);
   }
 
   return (
     <div>
-      <label className="inline-flex items-center">
+      <label className="inline-flex items-center cursor-pointer">
         <input
           type="checkbox"
-          className="w-6 h-6 focus:ring-0 text-primary-main border-1 border-gray-100 cursor-pointer"
+          className="w-6 h-6 focus:ring-0 text-primary-dark border-1 border-gray-100 cursor-pointer"
           checked={filtered}
           onChange={handleFilterSelect}
         />

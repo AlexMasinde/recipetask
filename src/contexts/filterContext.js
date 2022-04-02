@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { foods } from "../utils/foodCategories";
+import { foods } from "../utils/foods";
 
 const FiltersContext = createContext();
 

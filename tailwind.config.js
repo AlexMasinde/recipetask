@@ -11,6 +11,7 @@ module.exports = {
         dark: "#FB693C",
       },
       gray: colors.gray,
+      white: colors.white,
     },
   },
   plugins: [require("@tailwindcss/forms")],
